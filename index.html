@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="assets/pfp.png" />
-        <meta name="description" content="misterfonka's personal website." />
-        <meta name="keywords" content="software development, programming, portfolio" />
+        <meta name="description" content="my personal website showcasing software development projects and contact information." />
+        <meta name="keywords" content="about me, software development, programming, portfolio" />
         <meta name="author" content="misterfonka" />
         <title>misterfonka</title>
 
@@ -15,16 +15,20 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                background-color: #ffffff;
-                color: #333;
+                position: relative;
+                color: #e0e0e0;
                 text-align: center;
             }
 
             header {
-                color: #fff;
+                color: #ffffff;
                 padding: 1em;
                 border-radius: 0 0 15px 15px;
+                background-color: rgba(30, 30, 30, 0.9);
                 text-align: center;
+                position: relative;
+                z-index: 2;
+                margin-bottom: 0;
             }
 
             #badge-container {
@@ -44,21 +48,25 @@
                 max-width: 800px;
                 margin: 20px auto;
                 padding: 20px;
-                background-color: #fff;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                background-color: #1e1e1e;
                 border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
                 text-align: left;
+                position: relative;
+                z-index: 2;
             }
 
             footer {
-                background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #dddddd);
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 30, 30, 0.9));
                 padding: 10px;
                 margin-top: auto;
+                position: relative;
+                z-index: 2;
             }
 
             footer p {
                 margin: 0;
-                color: #33333350;
+                color: #888888;
             }
 
             img {
@@ -71,20 +79,21 @@
             }
 
             h2 {
-                color: #007bff;
-                border-bottom: 2px solid #007bff;
+                color: #bb86fc;
+                border-bottom: 2px solid #bb86fc;
                 padding-bottom: 10px;
                 margin-bottom: 20px;
             }
 
             p {
-                color: #555;
+                color: #e0e0e0;
                 line-height: 1.6;
             }
 
             ul {
-                padding: 0;
-                list-style-type: none;
+                padding-left: 20px;
+                list-style-type: disc;
+                margin: 0;
             }
 
             ul li {
@@ -92,80 +101,127 @@
             }
 
             ul li a {
-                color: #007bff;
+                color: #bb86fc;
                 text-decoration: none;
             }
 
             ul li a:hover {
                 text-decoration: underline;
             }
+
+            .styled-link {
+                color: #bb86fc;
+                text-decoration: none;
+            }
+
+            .styled-link:hover {
+                text-decoration: underline;
+            }
+
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #1e1e1e, #121212);
+                background-size: 200% 200%;
+                animation: gradientAnimation 30s ease infinite;
+                z-index: 0;
+            }
+
+            /* for some reason one of the colors over laps the header, idk why
+            if anyone wants to create a pull request the fix that would be
+            greatly appreciated. */
+
+            @keyframes gradientAnimation {
+                0% {
+                    background-position: 0% 0%;
+                }
+                50% {
+                    background-position: 100% 100%;
+                }
+                100% {
+                    background-position: 0% 0%;
+                }
+            }
         </style>
     </head>
-
     <body>
         <header>
-            <img src="assets/pfp.png" alt="My PFP" /><br />
+            <img src="assets/pfp.png" alt="Profile Picture" />
             <strong><p>misterfonka</p></strong>
             <div id="badge-container">
-                <a href="https://archlinux.org"><img src="https://img.shields.io/badge/-Arch%20Linux-white?style=flat&logo=ArchLinux" alt="Arch Linux" /></a>
-                <a href="https://git-scm.com"><img src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git" alt="Git" /></a>
-                <a href="https://github.com"><img src="https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github" alt="GitHub" /></a>
-                <a href="https://gitlab.com"><img src="https://img.shields.io/badge/-GitLab-FCA121?style=flat-square&logo=gitlab" alt="GitLab" /></a>
-                <a href="https://code.visualstudio.com"><img src="https://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code" alt="VS Code" /></a>
-                <a href="https://linux.org"><img src="https://img.shields.io/badge/Linux-black?style=flat-square&logo=linux" alt="Linux" /></a>
-                <a href="https://www.arduino.cc"><img src="https://img.shields.io/badge/Arduino-black?style=flat-square&logo=arduino" alt="Arduino" /></a>
-                <a href="https://www.raspberrypi.com"><img src="https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=flat-square&logo=Raspberry-Pi" alt="Raspberry Pi" /></a>
-                <a href="https://www.python.org"><img src="https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python" alt="Python" /></a>
-                <a href="https://www.gnu.org/software/bash"><img src="https://img.shields.io/badge/-Bash-white?style=flat-square&logo=Shell" alt="Bash" /></a>
-                <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/-Rust-orange?style=flat-square&logo=Rust" alt="Rust" /></a>
-                <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><img src="https://img.shields.io/badge/--black?style=flat-square&logo=C" alt="C" /></a>
-                <a href="https://www.chromium.org/chromium-os/"><img src="https://img.shields.io/badge/ChromiumOS-white?style=flat-square&logo=google-chrome" alt="ChromiumOS" /></a>
+                <a href="https://git-scm.com" target="_blank"><img src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git" alt="Git" /></a>
+                <a href="https://github.com" target="_blank"><img src="https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github" alt="GitHub" /></a>
+                <a href="https://gitlab.com" target="_blank"><img src="https://img.shields.io/badge/-GitLab-FCA121?style=flat-square&logo=gitlab" alt="GitLab" /></a>
+                <a href="https://code.visualstudio.com" target="_blank"><img src="https://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code" alt="VS Code" /></a>
+                <a href="https://linux.org" target="_blank"><img src="https://img.shields.io/badge/Linux-black?style=flat-square&logo=linux" alt="Linux" /></a>
+                <a href="https://www.arduino.cc" target="_blank"><img src="https://img.shields.io/badge/Arduino-black?style=flat-square&logo=arduino" alt="Arduino" /></a>
+                <a href="https://www.raspberrypi.com" target="_blank"><img src="https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=flat-square&logo=Raspberry-Pi" alt="Raspberry Pi" /></a>
+                <a href="https://www.python.org" target="_blank"><img src="https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python" alt="Python" /></a>
+                <a href="https://www.gnu.org/software/bash" target="_blank"><img src="https://img.shields.io/badge/-Bash-white?style=flat-square&logo=Shell" alt="Bash" /></a>
+                <a href="https://www.rust-lang.org" target="_blank"><img src="https://img.shields.io/badge/-Rust-orange?style=flat-square&logo=Rust" alt="Rust" /></a>
+                <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank"><img src="https://img.shields.io/badge/--black?style=flat-square&logo=C" alt="C" /></a>
+                <a href="https://www.chromium.org/chromium-os/" target="_blank"><img src="https://img.shields.io/badge/ChromiumOS-white?style=flat-square&logo=google-chrome" alt="ChromiumOS" /></a>
+                <a href="assets/biden.mp4" target="_blank"><img src="assets/joebiden.png" alt="Biden Approved" /></a>
+                <a href="https://chromeisbad.com/" target="_blank"><img src="assets/anythingbutchrome.gif" alt="Anything but Chrome!" /></a>
+                <a href="https://ublockorigin.com/" target="_blank"><img src="assets/ublock.gif" alt="UBlock Origin, Now!" /></a>
+                <a href="https://archlinux.org/" target="_blank"><img src="assets/archlinux.png" alt="Arch Linux" /></a>
+                <a href="https://www.linux.org/pages/download/" target="_blank"><img src="assets/linux.gif" alt="Linux, Now!" /></a>
             </div>
         </header>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Hello! I'm a versatile software developer proficient in a spectrum of languages, including:</p>
+            <p>Hello! Welcome to my website!</p>
+            <p>
+                I like programming, music, video games, and VR stuff. You should check out my <a href="https://github.com/misterfonka" class="styled-link" target="_blank">GitHub</a> for some random stuff<br />
+                I have made. I am interested in ChromeOS, mainly stuff to do with device management.
+            </p>
+            <p>
+                Some games I like are Minecraft, Celeste, <a href="assets/skibiditoilet.mp4" class="styled-link" target="_blank">Garry's Mod</a>, Bonelab, and
+                <a href="https://mod.io/u/misterfonka1/" class="styled-link" target="_blank">NCS</a>.
+            </p>
+            <p>I am proficient in multiple programming languages including:</p>
             <ul>
-                <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">C</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank">Assembly</a></li>
-                <li><a href="https://www.rust-lang.org" target="_blank">Rust</a></li>
-                <li><a href="https://www.python.org" target="_blank">Python</a></li>
-                <li><a href="https://www.gnu.org/software/bash" target="_blank">Bash</a></li>
-                <li><a href="https://www.zsh.org" target="_blank">Zsh</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)" class="styled-link" target="_blank">C</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Assembly_language" class="styled-link" target="_blank">Assembly</a> (not super good but alright.)</li>
+                <li><a href="https://www.rust-lang.org" class="styled-link" target="_blank">Rust</a></li>
+                <li><a href="https://www.python.org" class="styled-link" target="_blank">Python</a></li>
+                <li><a href="https://www.gnu.org/software/bash" class="styled-link" target="_blank">Bash</a></li>
             </ul>
         </section>
 
         <section id="portfolio">
             <h2>Portfolio</h2>
-            <p>I will be making a lot more projects in the future, and I will be updating this website to contain the projects.</p>
+            <p>This is some of the random stuff I have decided to make:</p>
             <ul>
-                <li><a href="https://github.com/misterfonka/DrawU" target="_blank">DrawU:</a> A WiiU homebrew drawing game, made purely just for fun.</li>
-                <li><a href="https://github.com/misterfonka/unblockedcave.github.io" target="_blank">Unblocked Cave:</a> A gaming website, mainly made for bypassing school restrictions.</li>
+                <li><a href="https://github.com/misterfonka/DrawU" class="styled-link" target="_blank">DrawU</a>: A WiiU homebrew drawing game.</li>
+                <li><a href="https://misterfonka.github.io/unblockedcave" class="styled-link" target="_blank">Unblocked Cave</a>: A gaming site for bypassing restrictions.</li>
             </ul>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>You can contact me in multiple ways:</p>
+            <p>Reach out to me via:</p>
             <div id="contact-badge-container">
-                <a href="https://discord.com/users/871556779455176745"><img src="https://img.shields.io/badge/-@misterfonka-black?style=social&logo=Discord" alt="Discord" /></a>
+                <a href="https://discord.com/users/871556779455176745" target="_blank"><img src="https://img.shields.io/badge/-@misterfonka-black?style=social&logo=Discord" alt="Discord" /></a>
                 <a href="mailto:misterfonka@proton.me"><img src="https://img.shields.io/badge/-misterfonka@proton.me-black?style=social&logo=Proton" alt="Proton Mail" /></a>
-                <a href="https://matrix.org"><img src="https://img.shields.io/badge/-@misterfonka:matrix.org-black?style=social&logo=Matrix" alt="Matrix" /></a>
+                <a href="https://matrix.org" target="_blank"><img src="https://img.shields.io/badge/-@misterfonka:matrix.org-black?style=social&logo=Matrix" alt="Matrix" /></a>
             </div>
             <ul>
-                <li><a href="https://discord.com/users/871556779455176745" target="_blank">Discord</a></li>
-                <li><a href="mailto:misterfonka@proton.me" target="_blank">Email</a></li>
-                <li><a href="https://matrix.org" target="_blank">Matrix</a> (@misterfonka:matrix.org)</li>
+                <br />
+                <li><a href="https://discord.com/users/871556779455176745" class="styled-link" target="_blank">Discord</a></li>
+                <li><a href="mailto:misterfonka@proton.me" class="styled-link" target="_blank">Email</a></li>
+                <li><a href="https://matrix.org" class="styled-link" target="_blank">Matrix</a> (@misterfonka:matrix.org)</li>
             </ul>
         </section>
 
-        <a href='http://www.freevisitorcounters.com'>on freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=4d69be15b372b08c6ce3823eeba5986d78654968'></script>
-        <script type="text/javascript" src="https://freevisitorcounters.com/en/home/counter/1120580/t/4"></script>
-
         <footer>
             <p>&copy; 2024 misterfonka. All rights reserved.</p>
-            <p>This website is open-source on <a href="https://github.com/misterfonka/misterfonka.github.io" target="_blank">Github</a>.</p>
+            <p>This site is open-source on <a href="https://github.com/misterfonka/misterfonka.github.io" class="styled-link" target="_blank">GitHub</a>.</p>
         </footer>
     </body>
 </html>
