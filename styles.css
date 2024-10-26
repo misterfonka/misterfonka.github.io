@@ -1,0 +1,230 @@
+/* most browsers don't let audio play if you haven't interacted with the page so I added this */
+/* very much inspired by guns.lol */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    opacity: 1;
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.overlay-text {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.overlay-text p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.overlay-text p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.overlay-text p:last-of-type {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.overlay-text:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.overlay-text p {
+    transition: color 0.3s ease;
+}
+
+.overlay-text:hover p {
+    color: #ffffff;
+}
+#mute-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+header {
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(30, 30, 30, 0.9);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+}
+
+#badge-container-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+    margin-top: 0;
+}
+
+#badge-container {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+}
+
+#badge-container a {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 1px;
+}
+
+#contact-badge-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+footer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 30, 30, 0.9));
+    padding: 10px;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    margin: 0;
+    color: #888888;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #bb86fc;
+    border-bottom: 2px solid #bb86fc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+.styled-link {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.styled-link:hover {
+    text-decoration: underline;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    background-size: 200% 200%;
+    animation: gradientAnimation 30s ease infinite;
+    z-index: 0;
+}
+
+/* for some reason one of the colors over laps the header, idk why
+if anyone wants to create a pull request the fix that would be
+greatly appreciated. */
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
